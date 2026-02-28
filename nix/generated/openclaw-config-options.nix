@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev 0e755ad99a54d926ed931564622a1955078f14d7. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev 8090cb4c5e5db46b871766d06e1fcf4313ce99fb. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -9890,6 +9890,10 @@ in
       };
       headers = lib.mkOption {
         type = t.nullOr (t.attrsOf (t.str));
+        default = null;
+      };
+      injectNumCtxForOpenAICompat = lib.mkOption {
+        type = t.nullOr (t.bool);
         default = null;
       };
       models = lib.mkOption {
