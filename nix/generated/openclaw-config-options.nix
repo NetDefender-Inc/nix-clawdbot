@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev 002539c01e04411453994ab369f4444824472f23. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev fbd832d64f19bd7f0877071fe248319d84427672. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -311,6 +311,10 @@ in
           type = t.nullOr (t.submodule { options = {
           enabled = lib.mkOption {
             type = t.nullOr (t.bool);
+            default = null;
+          };
+          forceFlushTranscriptBytes = lib.mkOption {
+            type = t.nullOr (t.oneOf [ (t.int) (t.str) ]);
             default = null;
           };
           prompt = lib.mkOption {
@@ -8484,6 +8488,10 @@ in
         default = null;
       };
     }; });
+      default = null;
+    };
+    stuckSessionWarnMs = lib.mkOption {
+      type = t.nullOr (t.int);
       default = null;
     };
   }; });
