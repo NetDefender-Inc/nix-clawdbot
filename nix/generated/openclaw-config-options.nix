@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev 44c50d9a734c66b25825095f1e2a09784023502c. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev 21708f58ceb0429dbc3fcdb1cd2eefeb4c767e0a. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -8640,6 +8640,10 @@ in
     };
     failureAlert = lib.mkOption {
       type = t.nullOr (t.submodule { options = {
+      accountId = lib.mkOption {
+        type = t.nullOr (t.str);
+        default = null;
+      };
       after = lib.mkOption {
         type = t.nullOr (t.int);
         default = null;
@@ -8650,6 +8654,31 @@ in
       };
       enabled = lib.mkOption {
         type = t.nullOr (t.bool);
+        default = null;
+      };
+      mode = lib.mkOption {
+        type = t.nullOr (t.enum [ "announce" "webhook" ]);
+        default = null;
+      };
+    }; });
+      default = null;
+    };
+    failureDestination = lib.mkOption {
+      type = t.nullOr (t.submodule { options = {
+      accountId = lib.mkOption {
+        type = t.nullOr (t.str);
+        default = null;
+      };
+      channel = lib.mkOption {
+        type = t.nullOr (t.str);
+        default = null;
+      };
+      mode = lib.mkOption {
+        type = t.nullOr (t.enum [ "announce" "webhook" ]);
+        default = null;
+      };
+      to = lib.mkOption {
+        type = t.nullOr (t.str);
         default = null;
       };
     }; });
