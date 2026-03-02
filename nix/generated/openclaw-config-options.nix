@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev f77f3fb839a247c20f0ccdc6a416359c8725df9f. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev 45d77cac162d1e418c3a4649139e51bd065d3a51. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -831,6 +831,27 @@ in
           default = null;
         };
       }; }));
+        default = null;
+      };
+      pdfMaxBytesMb = lib.mkOption {
+        type = t.nullOr (t.number);
+        default = null;
+      };
+      pdfMaxPages = lib.mkOption {
+        type = t.nullOr (t.int);
+        default = null;
+      };
+      pdfModel = lib.mkOption {
+        type = t.nullOr (t.oneOf [ (t.str) (t.submodule { options = {
+        fallbacks = lib.mkOption {
+          type = t.nullOr (t.listOf (t.str));
+          default = null;
+        };
+        primary = lib.mkOption {
+          type = t.nullOr (t.str);
+          default = null;
+        };
+      }; }) ]);
         default = null;
       };
       repoRoot = lib.mkOption {
