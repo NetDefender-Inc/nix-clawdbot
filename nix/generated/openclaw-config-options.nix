@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev ec0eb9f8c35891675f6bbc11589c463d5d32ad5e. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev 3d998828b9300e531071d30cedd8923753cfaa96. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -3179,6 +3179,10 @@ in
               type = t.nullOr (t.bool);
               default = null;
             };
+            ignoreOtherMentions = lib.mkOption {
+              type = t.nullOr (t.bool);
+              default = null;
+            };
             includeThreadStarter = lib.mkOption {
               type = t.nullOr (t.bool);
               default = null;
@@ -3238,6 +3242,10 @@ in
               default = null;
             };
           }; }));
+            default = null;
+          };
+          ignoreOtherMentions = lib.mkOption {
+            type = t.nullOr (t.bool);
             default = null;
           };
           reactionNotifications = lib.mkOption {
@@ -4107,6 +4115,10 @@ in
             type = t.nullOr (t.bool);
             default = null;
           };
+          ignoreOtherMentions = lib.mkOption {
+            type = t.nullOr (t.bool);
+            default = null;
+          };
           includeThreadStarter = lib.mkOption {
             type = t.nullOr (t.bool);
             default = null;
@@ -4166,6 +4178,10 @@ in
             default = null;
           };
         }; }));
+          default = null;
+        };
+        ignoreOtherMentions = lib.mkOption {
+          type = t.nullOr (t.bool);
           default = null;
         };
         reactionNotifications = lib.mkOption {
