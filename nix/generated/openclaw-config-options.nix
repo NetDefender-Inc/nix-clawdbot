@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev 0e16749f00e51695321568b80e8e78433c2216f8. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev 9657ded2e11565f7fe62580471f9c5ab7fa43876. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -8589,6 +8589,21 @@ in
       };
       textChunkLimit = lib.mkOption {
         type = t.nullOr (t.int);
+        default = null;
+      };
+    }; });
+      default = null;
+    };
+  }; });
+    default = null;
+  };
+
+  cli = lib.mkOption {
+    type = t.nullOr (t.submodule { options = {
+    banner = lib.mkOption {
+      type = t.nullOr (t.submodule { options = {
+      taglineMode = lib.mkOption {
+        type = t.nullOr (t.oneOf [ (t.enum [ "random" ]) (t.enum [ "default" ]) (t.enum [ "off" ]) ]);
         default = null;
       };
     }; });
