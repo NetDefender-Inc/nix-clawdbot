@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev 60849f33357882e00722216cc1a555f12337ac78. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev 2c8ee593b97213c6f72892fe56761d285aac5e26. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -3816,6 +3816,10 @@ in
               }; }) ]) ]);
                 default = null;
               };
+              baseUrl = lib.mkOption {
+                type = t.nullOr (t.str);
+                default = null;
+              };
               model = lib.mkOption {
                 type = t.nullOr (t.str);
                 default = null;
@@ -4779,6 +4783,10 @@ in
                 type = t.enum [ "exec" ];
               };
             }; }) ]) ]);
+              default = null;
+            };
+            baseUrl = lib.mkOption {
+              type = t.nullOr (t.str);
               default = null;
             };
             model = lib.mkOption {
@@ -11337,6 +11345,10 @@ in
             type = t.enum [ "exec" ];
           };
         }; }) ]) ]);
+          default = null;
+        };
+        baseUrl = lib.mkOption {
+          type = t.nullOr (t.str);
           default = null;
         };
         model = lib.mkOption {
