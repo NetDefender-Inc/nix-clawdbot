@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev ca8091491d32624a8d760069a0150e7ce392f5cc. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev 5fdcef7cbe9121b251291535081d553426733719. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -10291,6 +10291,47 @@ in
           type = t.nullOr (t.submodule { options = {
           enabled = lib.mkOption {
             type = t.nullOr (t.bool);
+            default = null;
+          };
+          images = lib.mkOption {
+            type = t.nullOr (t.submodule { options = {
+            allowUrl = lib.mkOption {
+              type = t.nullOr (t.bool);
+              default = null;
+            };
+            allowedMimes = lib.mkOption {
+              type = t.nullOr (t.listOf (t.str));
+              default = null;
+            };
+            maxBytes = lib.mkOption {
+              type = t.nullOr (t.int);
+              default = null;
+            };
+            maxRedirects = lib.mkOption {
+              type = t.nullOr (t.int);
+              default = null;
+            };
+            timeoutMs = lib.mkOption {
+              type = t.nullOr (t.int);
+              default = null;
+            };
+            urlAllowlist = lib.mkOption {
+              type = t.nullOr (t.listOf (t.str));
+              default = null;
+            };
+          }; });
+            default = null;
+          };
+          maxBodyBytes = lib.mkOption {
+            type = t.nullOr (t.int);
+            default = null;
+          };
+          maxImageParts = lib.mkOption {
+            type = t.nullOr (t.int);
+            default = null;
+          };
+          maxTotalImageBytes = lib.mkOption {
+            type = t.nullOr (t.int);
             default = null;
           };
         }; });
