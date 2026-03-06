@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev 1a67cf57e3186b453423473118d920eb94bf4ed5. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev d326861eb470646ea1d419f733406b7bb75e5ebe. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -8674,6 +8674,31 @@ in
           type = t.nullOr (t.int);
           default = null;
         };
+        threadBindings = lib.mkOption {
+          type = t.nullOr (t.submodule { options = {
+          enabled = lib.mkOption {
+            type = t.nullOr (t.bool);
+            default = null;
+          };
+          idleHours = lib.mkOption {
+            type = t.nullOr (t.number);
+            default = null;
+          };
+          maxAgeHours = lib.mkOption {
+            type = t.nullOr (t.number);
+            default = null;
+          };
+          spawnAcpSessions = lib.mkOption {
+            type = t.nullOr (t.bool);
+            default = null;
+          };
+          spawnSubagentSessions = lib.mkOption {
+            type = t.nullOr (t.bool);
+            default = null;
+          };
+        }; });
+          default = null;
+        };
         timeoutSeconds = lib.mkOption {
           type = t.nullOr (t.int);
           default = null;
@@ -9233,6 +9258,31 @@ in
       };
       textChunkLimit = lib.mkOption {
         type = t.nullOr (t.int);
+        default = null;
+      };
+      threadBindings = lib.mkOption {
+        type = t.nullOr (t.submodule { options = {
+        enabled = lib.mkOption {
+          type = t.nullOr (t.bool);
+          default = null;
+        };
+        idleHours = lib.mkOption {
+          type = t.nullOr (t.number);
+          default = null;
+        };
+        maxAgeHours = lib.mkOption {
+          type = t.nullOr (t.number);
+          default = null;
+        };
+        spawnAcpSessions = lib.mkOption {
+          type = t.nullOr (t.bool);
+          default = null;
+        };
+        spawnSubagentSessions = lib.mkOption {
+          type = t.nullOr (t.bool);
+          default = null;
+        };
+      }; });
         default = null;
       };
       timeoutSeconds = lib.mkOption {
