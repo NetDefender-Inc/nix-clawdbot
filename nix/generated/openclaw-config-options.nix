@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev bf623a580bc586f893673c93a5f11900ced498b0. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev fa69f836c4630348dbcb182868b2a022c989b5bc. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -11014,6 +11014,10 @@ in
     type = t.nullOr (t.submodule { options = {
     preserveFilenames = lib.mkOption {
       type = t.nullOr (t.bool);
+      default = null;
+    };
+    ttlHours = lib.mkOption {
+      type = t.nullOr (t.int);
       default = null;
     };
   }; });
