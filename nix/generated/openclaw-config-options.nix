@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev 5b30c9d3d7bcccf0f9798f7d81bf5b2873946a44. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev d902bae554ca49614b642dba381a7546f134f64e. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -3116,6 +3116,15 @@ in
           type = t.nullOr (t.str);
           default = null;
         };
+        agentComponents = lib.mkOption {
+          type = t.nullOr (t.submodule { options = {
+          enabled = lib.mkOption {
+            type = t.nullOr (t.bool);
+            default = null;
+          };
+        }; });
+          default = null;
+        };
         allowBots = lib.mkOption {
           type = t.nullOr (t.oneOf [ (t.bool) (t.enum [ "mentions" ]) ]);
           default = null;
@@ -4088,6 +4097,15 @@ in
       };
       activityUrl = lib.mkOption {
         type = t.nullOr (t.str);
+        default = null;
+      };
+      agentComponents = lib.mkOption {
+        type = t.nullOr (t.submodule { options = {
+        enabled = lib.mkOption {
+          type = t.nullOr (t.bool);
+          default = null;
+        };
+      }; });
         default = null;
       };
       allowBots = lib.mkOption {
@@ -8715,6 +8733,11 @@ in
           type = t.nullOr (t.str);
           default = null;
         };
+        webhookCertPath = lib.mkOption {
+          type = t.nullOr (t.str);
+          default = null;
+          description = "Path to the self-signed certificate (PEM) to upload to Telegram during webhook registration. Required for self-signed certs (direct IP or no domain).";
+        };
         webhookHost = lib.mkOption {
           type = t.nullOr (t.str);
           default = null;
@@ -9300,6 +9323,11 @@ in
       tokenFile = lib.mkOption {
         type = t.nullOr (t.str);
         default = null;
+      };
+      webhookCertPath = lib.mkOption {
+        type = t.nullOr (t.str);
+        default = null;
+        description = "Path to the self-signed certificate (PEM) to upload to Telegram during webhook registration. Required for self-signed certs (direct IP or no domain).";
       };
       webhookHost = lib.mkOption {
         type = t.nullOr (t.str);
