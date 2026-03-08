@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev 8a1015f1aadbd619737c33c4ccc0b035e284a159. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev da3cccb21233e2298cc693ef0071dd5a687345c0. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -12667,6 +12667,10 @@ in
         default = null;
       };
     }; }));
+      default = null;
+    };
+    silenceTimeoutMs = lib.mkOption {
+      type = t.nullOr (t.int);
       default = null;
     };
     voiceAliases = lib.mkOption {
