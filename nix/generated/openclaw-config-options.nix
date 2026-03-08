@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev eb0758e1722c05e4c6cb359ae8983cf5cf372c45. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev 8a1015f1aadbd619737c33c4ccc0b035e284a159. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -13879,6 +13879,15 @@ in
             type = t.enum [ "exec" ];
           };
         }; }) ]) ]);
+          default = null;
+        };
+        brave = lib.mkOption {
+          type = t.nullOr (t.submodule { options = {
+          mode = lib.mkOption {
+            type = t.nullOr (t.oneOf [ (t.enum [ "web" ]) (t.enum [ "llm-context" ]) ]);
+            default = null;
+          };
+        }; });
           default = null;
         };
         cacheTtlMinutes = lib.mkOption {
