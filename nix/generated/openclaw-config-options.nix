@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev 87876a3e36dbf067245ee727beaed7829a5b00c1. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev 58634c9c6567f027f8d8cb6947f3d382e32c2be2. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -3974,8 +3974,16 @@ in
                 type = t.nullOr (t.str);
                 default = null;
               };
+              instructions = lib.mkOption {
+                type = t.nullOr (t.str);
+                default = null;
+              };
               model = lib.mkOption {
                 type = t.nullOr (t.str);
+                default = null;
+              };
+              speed = lib.mkOption {
+                type = t.nullOr (t.number);
                 default = null;
               };
               voice = lib.mkOption {
@@ -4965,8 +4973,16 @@ in
               type = t.nullOr (t.str);
               default = null;
             };
+            instructions = lib.mkOption {
+              type = t.nullOr (t.str);
+              default = null;
+            };
             model = lib.mkOption {
               type = t.nullOr (t.str);
+              default = null;
+            };
+            speed = lib.mkOption {
+              type = t.nullOr (t.number);
               default = null;
             };
             voice = lib.mkOption {
@@ -6827,9 +6843,17 @@ in
         type = t.nullOr (t.str);
         default = null;
       };
+      accountUuid = lib.mkOption {
+        type = t.nullOr (t.str);
+        default = null;
+      };
       accounts = lib.mkOption {
         type = t.nullOr (t.attrsOf (t.submodule { options = {
         account = lib.mkOption {
+          type = t.nullOr (t.str);
+          default = null;
+        };
+        accountUuid = lib.mkOption {
           type = t.nullOr (t.str);
           default = null;
         };
@@ -8231,7 +8255,15 @@ in
         };
         actions = lib.mkOption {
           type = t.nullOr (t.submodule { options = {
+          createForumTopic = lib.mkOption {
+            type = t.nullOr (t.bool);
+            default = null;
+          };
           deleteMessage = lib.mkOption {
+            type = t.nullOr (t.bool);
+            default = null;
+          };
+          editMessage = lib.mkOption {
             type = t.nullOr (t.bool);
             default = null;
           };
@@ -8843,7 +8875,15 @@ in
       };
       actions = lib.mkOption {
         type = t.nullOr (t.submodule { options = {
+        createForumTopic = lib.mkOption {
+          type = t.nullOr (t.bool);
+          default = null;
+        };
         deleteMessage = lib.mkOption {
+          type = t.nullOr (t.bool);
+          default = null;
+        };
+        editMessage = lib.mkOption {
           type = t.nullOr (t.bool);
           default = null;
         };
@@ -11720,8 +11760,16 @@ in
           type = t.nullOr (t.str);
           default = null;
         };
+        instructions = lib.mkOption {
+          type = t.nullOr (t.str);
+          default = null;
+        };
         model = lib.mkOption {
           type = t.nullOr (t.str);
+          default = null;
+        };
+        speed = lib.mkOption {
+          type = t.nullOr (t.number);
           default = null;
         };
         voice = lib.mkOption {
