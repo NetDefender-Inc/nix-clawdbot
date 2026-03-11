@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev 58634c9c6567f027f8d8cb6947f3d382e32c2be2. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev 128e5bc317c963e73734731f3c851efb11f85a8b. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -653,6 +653,10 @@ in
         };
         model = lib.mkOption {
           type = t.nullOr (t.str);
+          default = null;
+        };
+        outputDimensionality = lib.mkOption {
+          type = t.nullOr (t.int);
           default = null;
         };
         provider = lib.mkOption {
@@ -1411,6 +1415,10 @@ in
         };
         model = lib.mkOption {
           type = t.nullOr (t.str);
+          default = null;
+        };
+        outputDimensionality = lib.mkOption {
+          type = t.nullOr (t.int);
           default = null;
         };
         provider = lib.mkOption {
