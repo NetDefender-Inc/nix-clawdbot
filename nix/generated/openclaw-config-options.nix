@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev 61429230b202dbf2773a50c31f6cc4318f9420b0. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev 0a3b9a9a090ab2ae1dbf6eb8d044e20af165c0d1. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -10366,6 +10366,10 @@ in
     };
     wideArea = lib.mkOption {
       type = t.nullOr (t.submodule { options = {
+      domain = lib.mkOption {
+        type = t.nullOr (t.str);
+        default = null;
+      };
       enabled = lib.mkOption {
         type = t.nullOr (t.bool);
         default = null;
